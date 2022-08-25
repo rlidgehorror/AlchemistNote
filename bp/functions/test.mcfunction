@@ -1,0 +1,1 @@
+execute @e ~ ~ ~ say 1

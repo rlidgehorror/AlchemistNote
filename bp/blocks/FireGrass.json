@@ -1,0 +1,28 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "rbb:firegrass",
+            "register_to_creative_menu": true
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/blocks/firegrass.json",
+            "minecraft:creative_category": {
+                "category": "nature",
+                "group": "itemGroup.name.grass"
+              },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "firegrass",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:entity_collision": false,
+            "minecraft:geometry": "geometry.firegrass",
+            
+        },
+        "events": {
+
+        }
+    }
+}
