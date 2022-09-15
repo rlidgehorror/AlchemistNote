@@ -1,0 +1,27 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "rbb:oldalchemicalpan",
+            "register_to_creative_menu": true
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/blocks/oldalchemicalpan.json",
+            "minecraft:creative_category": {
+                "category": "construction",
+                "group": "itemGroup.name.rb"
+              },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "oldalchemicalpan",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.oldalchemicalpan",
+            "tag:wood_pick_diggable":{}
+        },
+        "events": {
+
+        }
+    }
+}
