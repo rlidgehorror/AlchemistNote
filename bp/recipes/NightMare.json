@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "rb:nightmare"
+            },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            " a ",
+            " a",
+            " b "
+            ],
+        "key": {
+            "a": {
+                "item": "rb:darkmatter"
+            },
+            "b": {
+                "item": "minecraft:iron_sword",
+                "data": 0
+            }
+        },
+        "result": {
+            "item": "rb:nightmare",
+            "count": 1
+            }
+        }
+    }

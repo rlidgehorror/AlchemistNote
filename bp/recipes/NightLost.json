@@ -1,0 +1,29 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "rb:nightlost"
+            },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            "   ",
+            "ba ",
+            "c "
+            ],
+        "key": {
+            "a": {
+                "item": "rb:skillscroll"
+            },
+            "b": {
+                "item": "rb:darkmatter"
+            },
+            "c": {
+                "item": "minecraft:redstone"
+            }
+        },
+        "result": {
+            "item": "rb:nightlost",
+            "count": 1
+            }
+        }
+    }

@@ -1,0 +1,32 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "rb:darkmatter",
+            "category": "Nature"
+        },
+        "components": {
+            
+            "minecraft:icon": {
+                "texture": "darkmatter"
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.ore"
+            },            "minecraft:render_offsets": {
+                "main_hand": {
+
+                    "first_person": {
+                        "scale": [
+                            0.028,
+                            0.028,
+                            0.028
+                        ]
+                    }
+                }
+            }
+        },
+        "events": {
+            
+        }
+    }
+}
