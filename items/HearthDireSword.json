@@ -1,0 +1,75 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "rb:hearthdiresword",
+            "category": "Equipment"
+        },
+        "components": {
+            "minecraft:icon": {
+                "texture": "hearthdiresword"
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.ore"
+            },
+            "minecraft:hand_equipped": true,
+            "minecraft:weapon": {
+                "on_hurt_entity": {
+                    "event": "rb:damage",
+                    "target": "self"
+                }
+            },
+            "minecraft:durability": {
+                "damage_chance": {
+                    "max": 1,
+                    "min": 1
+                },
+                "max_durability": 1200
+            },
+            "minecraft:damage": 6,
+            "minecraft:max_stack_size": 1,
+            "minecraft:enchantable": {
+                "slot": "sword", 
+                "value": 10
+            },
+            "minecraft:can_destroy_in_creative": false
+        },
+        "events": {
+            "rb:damage": {
+                "sequence": [
+                    {
+                        "damage": {
+                            "type": "magic",
+                            "amount": 1,
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "randomize": [
+                            {
+                                "weight": 1,
+                                "run_command": {
+                                    "command": [],
+                                    "target": "other"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "run_command": {
+                                    "command": [
+                                        "damage @s 3 fire",
+                                        "particle minecraft:mobflame_single ~ ~1 ~",
+                                        "particle minecraft:mobflame_single ~ ~1 ~",
+                                        "particle minecraft:mobflame_single ~ ~1 ~",
+                                        "particle minecraft:mobflame_single ~ ~1 ~"
+                                    ],
+                                    "target": "other"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
