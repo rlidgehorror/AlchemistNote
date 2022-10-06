@@ -1,0 +1,17 @@
+{
+    "rbb:bluegem":{
+        "textures": "bluegem"
+    },
+    "rbb:firegrass": {
+        "textures": "firegrass",
+        "sound": "grass"
+    },
+    "rbb:oldalchemicalpan": {
+        "textures": "oldalchemicalpan",
+        "sound": "stone"
+    },
+    "rl:nightstand": {
+        "textures": "nightstand",
+        "sound": "wood"
+    }
+}
