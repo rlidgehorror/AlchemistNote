@@ -1,5 +1,0 @@
-export class alchemicalpan {
-    constructor() {
-        
-    }
-}
