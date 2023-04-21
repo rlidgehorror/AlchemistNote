@@ -13,8 +13,11 @@ import {
 
 export class skillscroll /**@class */ {
     skillfunc = [];
+    //  技能池
     status = true;
+    // 判断当前是否正在执行技能,true为可以执行技能，即当前没有技能正在执行
     pace = 0
+    // 判断当前技能池执行的步数
     /**
      * 
      * @param {string} id 技能id
@@ -43,7 +46,7 @@ export class skillscroll /**@class */ {
                 this.pace++;
                 return this;
             } else {
-                return
+                return;
             }
         } else {
             return;
@@ -57,9 +60,10 @@ export class skillscroll /**@class */ {
      */
     cooldownShow(player) {
         if (!this.status && this.pace == 1) {
-            runCmd.playerCmd(`title "${player.nameTag}" title 技能冷却中！`, player)
+            runCmd.title("技能冷却中", player, "down");
+
         } else if (!this.status && this.pace > 1) {
-            runCmd.playerCmd(`title "${player.nameTag}" title 技能执行中！`, player)
+            runCmd.title("技能执行中", player, "down");
         };
     }
 
@@ -88,8 +92,9 @@ export class skillscroll /**@class */ {
                     });
                 this.pace--;
             };
-            runCmd.playerCmd(`title ${player.nameTag} title 技能冷却完成!! `, player);
+            runCmd.title("技能冷却完成", player, "down");
             runCmd.playerCmd(`title ${player.nameTag} subtitle 冷却时间:${this.time / 20}s `, player);
+            runCmd.playerCmd(`playsound random.anvil_use ${player.nameTag} ~ ~ ~ 1 1 1`, player);
         } else {
             return;
         };

@@ -1,5 +1,7 @@
 import {
-    world
+    world,
+    MinecraftDimensionTypes,
+    Dimension
 }
     from "mojang-minecraft";
 import { runCmd } from "./util/command";
@@ -17,7 +19,22 @@ world.events.beforeChat.subscribe((event) => {
                 player.runCommand(`say done`)
             })
     };
+    if (msg.includes("111")) {
+        event.cancel = true
+        const a = cmdasync(`say ${111}`);
+        runCmd.log(`${a}`)
+    }
 })
+async function cmdasync(cmd) {
+    return await world.getDimension("overworld").runCommandAsync(cmd)
+        .then(resolve => {
+            return resolve.successCount
+        },
+            reject => {
+                return 0
+            });
+
+}
 world.events.tick.subscribe((e) => {
     const player = [...world.getPlayers()];
     // const inv = player.getComponent("minecraft:inventory").container;
