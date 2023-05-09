@@ -1,13 +1,19 @@
 import {
     world,
     MinecraftDimensionTypes,
-    Dimension
+    Dimension,
+    MinecraftItemTypes
 }
     from "mojang-minecraft";
+import {
+    ActionFormData,
+    ActionFormResponse
+}
+    from 'mojang-minecraft-ui';
 import { runCmd } from "./util/command";
-import './blocks/blockbreak/blockbreak'
-import "./skill/skillscroll/main"
-import './skill/weapon/sword'
+import './blocks/blockbreak/blockbreak';
+import "./skill/skillscroll/main";
+import './skill/weapon/sword';
 import { tickingEvent, tickingPlayerCmd } from "./util/ticking";
 import { commandTimeout, consoleTimeout } from "./util/delay";
 world.events.beforeChat.subscribe((event) => {
@@ -21,9 +27,27 @@ world.events.beforeChat.subscribe((event) => {
     };
     if (msg.includes("111")) {
         event.cancel = true
-        const a = cmdasync(`say ${111}`);
-        runCmd.log(`${a}`)
+        cmdasync(`say 111`)
+            .then((res) => {
+                runCmd.log(res);
+            })
+
+    };
+});
+world.events.beforeItemUse.subscribe(args => {
+    const item = args.item;
+    const player = args.source;
+    if (item.id == "minecraft:diamond_sword") {
+        // let ui = new ActionFormData()
+        //     .title("测试标题")
+        //     .body("测试body")
+        //     .button("测试按钮")
+        // ui.show(player)
+        //     .then(res => {
+        //         runCmd.log("测试按钮点击");
+        //     })
     }
+
 })
 async function cmdasync(cmd) {
     return await world.getDimension("overworld").runCommandAsync(cmd)

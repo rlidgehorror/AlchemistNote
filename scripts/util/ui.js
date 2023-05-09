@@ -2,7 +2,7 @@ import {
     ActionFormData,
     Player
 } from "mojang-minecraft-ui";
-export default class ActionFormUi {
+export class ActionFormUi {
     _ui = new ActionFormData();
     buttonFunc = [];
     constructor() {};
